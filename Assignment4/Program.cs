@@ -3,60 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Collections;
+
 
 namespace Assignment4
 {
     class Program
     {
         //Manpreet kaur(730406)
+
+        ArrayList Beowulf;
+
         static void Main(string[] args)
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
+            p.ReadTextFiles();
 
-            public void Run()
-
-this.Read TextFiles();
+            Console.ReadLine();
+        }
+        public void Run()
+        {
+            this.ReadTextFiles();
         }
 
-        public void Read TextFiles()
+        public void ReadTextFiles()
+        {
+            using (StreamReader file = new StreamReader("U:\\Users\\730406\\manni bithday\\Beowulf.txt"))
+            {
 
-// Read file using StreamReader. Read file line by line
-using (StreamReader file = new StreamReader("C:/area51/beowulf.txt"))
-    {
-    int counter 0;
-string In
+                int counter = 0;
+                string ln;
 
-while ((in = file.ReadLine()) != null)
+                while ((ln = file.ReadLine()) != null)
+                {
+                    Console.WriteLine(ln);
+                    Beowulf.Add(ln);
+                }
+                file.Close();
 
-Console.WriteLine(1n );
-Beowulf.Add(1n)
+                counter = File.ReadLines("U:\\Users\\730406\\manni bithday\\Beowulf.txt").Count();
 
-file.close();
-Console.WriteLine($"File has {contour} lines.");
+                Console.WriteLine("\n Number of lines : " + counter);
+
+
+
+            }
         }
-}
-
-
-public int Find Number Of Blank Spaces(string line)
-
-// https://stackoverflow.com/questions/17812566/count-words-and-spaces-in-s
-
-int countletters = 0;
-int countSpaces = 0;
-
-foreach (char c in line)
-
-if (char.IsLetter(c)) { count letters c++;}
-if (char.IsWhiteSpace()) { countSpaces++; }
-
-return countSpaces;
-
-}
-
+       
     }
-
 }
-    }
-
-
